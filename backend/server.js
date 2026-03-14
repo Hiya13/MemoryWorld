@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Memory World API running 🚀");
+    res.send("Memory World API working perfectly 🚀");
 });
 
 const PORT = 5000;

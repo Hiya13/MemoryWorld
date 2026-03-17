@@ -4,11 +4,14 @@ const diarySchema = new mongoose.Schema(
   {
     text: {
       type: String,
-      required: true,
+      required: true
     },
+    scene: {
+      type: Object
+    }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 

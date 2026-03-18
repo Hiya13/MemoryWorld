@@ -10,9 +10,17 @@ router.post("/", async (req, res) => {
 
     const sceneData = await generateScene(text);
 
+    // fallback fix
+    const finalScene = {
+      location: sceneData?.location || "room",
+      time: sceneData?.time || "day",
+      objects: sceneData?.objects || [],
+      mood: sceneData?.mood || "neutral"
+    };
+
     const newEntry = new Diary({
       text,
-      scene: sceneData
+      scene: finalScene
     });
 
     const savedEntry = await newEntry.save();
